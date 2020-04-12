@@ -1,0 +1,238 @@
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import sent_tokenize, word_tokenize
+
+
+class Disease:
+     def __init__(self, name, symptoms):
+            self.name = name
+            self.symptoms = symptoms
+          
+
+
+causecold = "The common cold is a viral infection of your nose and throat (upper respiratory tract).It's usually harmless, although it might not feel that way. Many types of viruses can cause a common cold."
+
+causeflu = "The flu is caused by influenza viruses that infect the nose, throat, and lungs. These viruses spread when people with flu cough, sneeze or talk, sending droplets with the virus into the air and potentially into the mouths or noses of people who are nearby"
+
+causethyphoid = "Thyphoid fever is caused by Salmonella enterica serotype Typhi bacteria. Typhoid fever is contracted by the ingestion of contaminated food or water. Diagnosis of typhoid fever is made when Salmonella bacteria are detected with stool, urine, or blood cultures."
+
+causemeasles = "Measles is caused by infection with the rubeola virus. The virus lives in the mucus of the nose and throat of an infected child or adult. The disease is contagious for 4 days before the rash appears, and it continues to be contagious for about 4 to 5 days after."
+
+causemalaria = "Malaria is caused by Plasmodium parasites. The parasites are spread to people through the bites of infected female Anopheles mosquitoes, called malaria vectors. There are 5 parasite species that cause malaria in humans, and 2 of these species – P. falciparum and P. vivax – pose the greatest threat."
+
+causeebola = "Blood of a person infected with the virus.Body fluids, such as breast milk, stool, saliva, semen, sweat, urine, or vomit, of a person infected with the virus. Objects, such as needles or syringes, that are contaminated with the virus."
+        
+causeasthma = "Airborne substances, such as pollen, dust mites, mold spores, pet dander or particles of cockroach waste. Respiratory infections, such as the common cold.Physical activity (exercise-induced asthma) Cold air.Air pollutants and irritants, such as smoke."        
+
+causediabetes = "Type 1 diabetes is caused by the immune system destroying the cells in the pancreas that make insulin. This causes diabetes by leaving the body without enough insulin to function normally. This is called an autoimmune reaction, or autoimmune cause, because the body is attacking itself."
+
+causediarrhoea = "caused by:a virus – such as norovirus or rotavirus.bacteria – such as campylobacter, Clostridium difficile (C. difficile), Escherichia coli (E. ...parasites – such as the Giardia intestinalis parasite that causes giardiasis."
+
+causechickenpox = "Chickenpox is caused by a virus called varicella zoster. People become infected after being in contact with an infected child or adult. Chickenpox is one of the most infectious diseases. People who have never had chickenpox and have never been vaccinated are at the highest risk of infection."
+
+
+
+
+
+coldMedicine = "Tylenol | panadol | Nasal spray"     
+
+fluMedicine = "Tamiflu |  panadol | Zanamivir "
+
+thyphoidMedicine = "Chloramphenicol | Amoxicillin |  Ciprofloxacin | Azithromycin "
+
+measlesMedicine = "Tylenol | Aleve | Advil | Vitamin A "
+
+malariaMedicine = "Aralen | Qualaquin | Plaquenil | Mefloquine  "
+
+ebolaMedicine = "Oxygen Therapy | Blood Transfusion  "
+
+asthmaMedicine = "Salbutamol | Ipratropium | Prednisone | Theophyline "
+
+diabetesMedicine = "Glucophage | Insulin | Sulfonylureas | Meglitinides "
+    
+diarrhoeaMedicine = "Pepto-Bismol | Kaopectate | Imodium  "
+
+chickenpoxMedicine = "Tylenol | Benadryl | Antihistamimes "
+
+
+
+
+known_diseases = [
+   Disease('cold', set(
+     "sore throat|runny nose|congestion|mild_cough|aches".split("|"))
+     ),
+   Disease('flu', set(
+     "mild_fever|muscle aches|returning fever".split("|"))
+     ),
+   Disease('ebola', set(
+     "tiredness|bruising over 90% of body|black blood".split("|"))
+     ),
+   Disease('thyphoid', set(
+     "cough|abdominal_pain|poor_appetite|high_fever".split("|"))
+     ), 
+   Disease('measles', set(
+     "runny_nose|rash|low_fever|conjunctivitis".split("|"))
+     ), 
+   Disease('malaria', set(
+     "sweating|headache|nausea|vomiting|diarrhea|fever".split("|"))
+     ),  
+   Disease('diabetes', set(
+   "increased thirst|frequent urination|fatigue|blurred vision".split("|"))
+     ),
+   Disease('asthma', set(
+   "breathing problem|chest pressure|flare|Anxiety|fast heart rate|throat irritation".split("|"))
+     ),
+   Disease('diarrhoea', set(
+          "abdominal cramps|urgency to go to toilet|frequent passing of loose".split("|")) 
+     ),
+   Disease('chickenpox', set(
+   "red spots|loss of appetite|itiching|swollen lymph nodes".split("|"))
+    ), 
+    
+   ]
+
+
+
+
+symptoms = input("Please enter symptoms separated by commas: ")
+symptoms = symptoms.lower()
+symptoms = symptoms.split(",")
+
+
+possible = []
+for symptom in symptoms:
+     for disease in known_diseases:
+         if symptom in disease.symptoms:
+             possible.append(disease.name)
+                
+                
+
+if possible:
+     print("You may have these diseases:")
+     print(*possible)
+     
+else:
+     print("Good news! You're not going to have a disease named after you!")
+        
+
+        
+print("Enter the disease diagonised by the system :")
+disease_name = input("Enter Disease Name: ")
+
+if (disease_name == 'cold'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causecold)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(coldMedicine.split("|"))
+    print(word_tokenize(coldMedicine))
+    print("Advices And Suggestions : ")
+    print("Please wear warm cloths")
+    
+    
+
+elif (disease_name == 'flu'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causeflu)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(fluMedicine.split("|"))
+    print(word_tokenize(fluMedicine))
+    print("Advices And Suggestions : ")
+    print("Please take a warm bath and do salt gargling")
+    
+
+
+elif (disease_name == 'thyphoid'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causethyphoid)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(thyphoidMedicine.split("|"))
+    print(word_tokenize(thyphoidMedicine))
+    print("Advices And Suggestions : ")
+    print("Please do complete bed rest and take soft Diet")
+    
+    
+
+elif (disease_name == 'measles'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causemeasles)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(measlesMedicine.split("|"))
+    print(word_tokenize(measlesMedicine))
+    print("Advices And Suggestions : ")
+    print("Please Get rest and use more liquid")
+    
+    
+
+elif (disease_name == 'malaria'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causemalaria)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(malariaMedicine.split("|"))
+    print(word_tokenize(malariaMedicine))
+    print("Advices And Suggestions : ")
+    print("Please do not sleep in open air and cover your full skin")
+    
+    
+
+elif (disease_name == 'ebola'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causeebola)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(ebolaMedicine.split("|"))
+    print(word_tokenize(ebolaMedicine))
+    print("Advices And Suggestions : ")
+    print("Do Quarantine and self isolation")
+    
+
+    
+elif (disease_name == 'asthma'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causeasthma)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(asthmaMedicine.split("|"))
+    print(word_tokenize(asthmaMedicine))  
+    print("Advices And Suggestions : ")
+    print("Stop Smoking  take fresh air in morning")
+
+    
+    
+elif (disease_name == 'diabetes'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causediabetes)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(diabetesMedicine.split("|"))
+    print(word_tokenize(diabetesMedicine))  
+    print("Advices And Suggestions : ")
+    print("Avoid Taking Sugar rich food and take morning and evening walk")
+    
+
+elif (disease_name == 'diarrhoea'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causediarrhoea)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(diarrhoeaMedicine.split("|"))
+    print(word_tokenize(diarrhoeaMedicine))      
+    print("Advices And Suggestions : ")
+    print("drink water more consume food items having good water cocentrations")
+    
+
+
+elif (disease_name == 'chickenpox'):
+    print("Cause Of Disease :")
+    tokenized_sentence = sent_tokenize(causechickenpox)
+    print(tokenized_sentence)
+    print("Medicine that patient can take are :")
+    print(chickenpoxMedicine.split("|"))
+    print(word_tokenize(chickenpoxMedicine))
+    print("Advices And Suggestions : ")
+    print("Avoid eating Spicy and salty food consume more fruit and green vegetables")
+    
