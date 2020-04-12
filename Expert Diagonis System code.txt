@@ -18,7 +18,7 @@ causethyphoid = "Thyphoid fever is caused by Salmonella enterica serotype Typhi 
 
 causemeasles = "Measles is caused by infection with the rubeola virus. The virus lives in the mucus of the nose and throat of an infected child or adult. The disease is contagious for 4 days before the rash appears, and it continues to be contagious for about 4 to 5 days after."
 
-causemalaria = "Malaria is caused by Plasmodium parasites. The parasites are spread to people through the bites of infected female Anopheles mosquitoes, called malaria vectors. There are 5 parasite species that cause malaria in humans, and 2 of these species – P. falciparum and P. vivax – pose the greatest threat."
+causemalaria = "Malaria is caused by Plasmodium parasites. The parasites are spread to people through the bites of infected female Anopheles mosquitoes, called malaria vectors. There are 5 parasite species that cause malaria in humans, and 2 of these species â€“ P. falciparum and P. vivax â€“ pose the greatest threat."
 
 causeebola = "Blood of a person infected with the virus.Body fluids, such as breast milk, stool, saliva, semen, sweat, urine, or vomit, of a person infected with the virus. Objects, such as needles or syringes, that are contaminated with the virus."
         
@@ -26,7 +26,7 @@ causeasthma = "Airborne substances, such as pollen, dust mites, mold spores, pet
 
 causediabetes = "Type 1 diabetes is caused by the immune system destroying the cells in the pancreas that make insulin. This causes diabetes by leaving the body without enough insulin to function normally. This is called an autoimmune reaction, or autoimmune cause, because the body is attacking itself."
 
-causediarrhoea = "caused by:a virus – such as norovirus or rotavirus.bacteria – such as campylobacter, Clostridium difficile (C. difficile), Escherichia coli (E. ...parasites – such as the Giardia intestinalis parasite that causes giardiasis."
+causediarrhoea = "caused by:a virus â€“ such as norovirus or rotavirus.bacteria â€“ such as campylobacter, Clostridium difficile (C. difficile), Escherichia coli (E. ...parasites â€“ such as the Giardia intestinalis parasite that causes giardiasis."
 
 causechickenpox = "Chickenpox is caused by a virus called varicella zoster. People become infected after being in contact with an infected child or adult. Chickenpox is one of the most infectious diseases. People who have never had chickenpox and have never been vaccinated are at the highest risk of infection."
 
